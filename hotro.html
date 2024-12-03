@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hỗ Trợ - NHA KHOA UYÊN VY</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Hỗ trợ khách hàng NHA KHOA UYÊN VY" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .support-section {
+            margin-top: 50px;
+        }
+
+        .support-section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .support-form {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .support-form h3 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>NHA KHOA UYÊN VY</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link">TRANG CHỦ</a>
+                <a href="dichvu.html" class="nav-item nav-link">DỊCH VỤ</a>
+                <a href="datlich.html" class="nav-item nav-link">ĐẶT LỊCH</a>
+                <a href="hotro.html" class="nav-item nav-link active">HỖ TRỢ</a>
+            </div>
+            <!-- Tạo form tìm kiếm -->
+            <div class="search-container">
+                <input type="text" id="searchQuery" class="search-input" placeholder="Tìm kiếm...">
+                <button onclick="searchContent()" class="search-button">Tìm kiếm</button>
+            </div>
+
+            <!-- Khu vực hiển thị kết quả tìm kiếm -->
+            <div id="searchResults"></div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hỗ Trợ Section Start -->
+    <section id="hotro" class="container support-section">
+        <h2>HỖ TRỢ KHÁCH HÀNG</h2>
+
+        <!-- Mẫu hỗ trợ -->
+        <div class="support-form">
+            <h3>Gửi yêu cầu hỗ trợ</h3>
+            <form id="supportForm">
+                <div class="form-group">
+                    <label for="name">Họ và Tên:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Số điện thoại:</label>
+                    <input type="tel" id="tel" name="tel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Nội dung cần hỗ trợ:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Gửi yêu cầu</button>
+            </form>
+
+            <!-- Thông báo thành công -->
+            <div id="successMessage">
+                Yêu cầu của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ sớm nhất.
+            </div>
+        </div>
+    </section>
+    <!-- Hỗ Trợ Section End -->
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('supportForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Ngăn không tải lại trang
+
+            // Ẩn form và hiển thị thông báo thành công
+            document.getElementById('supportForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+    <!-- JavaScript cho tìm kiếm -->
+    <script>
+        function searchContent() {
+    var query = document.getElementById("searchQuery").value.toLowerCase();
+    var resultsContainer = document.getElementById("searchResults");
+    resultsContainer.innerHTML = ''; // Xóa kết quả cũ
+
+    if (query.trim() === '') {
+        resultsContainer.innerHTML = '<p>Vui lòng nhập từ khóa tìm kiếm.</p>';
+        return;
+    }
+
+    // Mẫu dữ liệu giả lập (bạn có thể thay đổi bằng cách truy vấn từ backend hoặc API)
+    var content = [
+        { title: 'Niềng Răng', url: 'niengrang.html' },
+        { title: 'Cấy Ghép Implant', url: 'cayghepimplant.html' },
+        { title: 'Bọc Răng Sứ', url: 'bocrangsu.html' },
+        { title: 'Nhổ Răng Khôn', url: 'nhorangkhon.html' },
+        { title: 'Tẩy Trắng Răng', url: 'taytrangrang.html' }
+    ];
+
+    // Lọc kết quả dựa trên từ khóa tìm kiếm
+    var results = content.filter(function(item) {
+        return item.title.toLowerCase().includes(query);
+    });
+
+    // Hiển thị kết quả
+    if (results.length > 0) {
+        results.forEach(function(result) {
+            var resultItem = document.createElement('div');
+            resultItem.classList.add('result-item');
+            // Cập nhật phần hiển thị để có liên kết dẫn đến trang
+            resultItem.innerHTML = `<h5><a href="${result.url}">${result.title}</a></h5>`;
+            resultsContainer.appendChild(resultItem);
+        });
+    } else {
+        resultsContainer.innerHTML = '<p>Không tìm thấy kết quả phù hợp.</p>';
+    }
+}
+
+    </script>
+
+</body>
+
+</html>

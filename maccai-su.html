@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title>NHA KHOA UYÊN VY</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* CSS để căn chỉnh bố cục dịch vụ */
+        .service {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .service-item {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+        }
+        .service-item img {
+            flex: 1; 
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .service-item .content {
+            flex: 2; 
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-item .btn-container {
+            flex: 1; /* Nút đặt lịch chiếm 1 phần */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .service-item h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .service-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .service-item .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .service-item .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Thay đổi màu liên kết thành đen và bỏ gạch chân */
+        .service-item a {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Khi hover, màu vẫn giữ đen nhưng có thể thay đổi hoặc giữ nguyên */
+        .service-item a:hover {
+            color: black;
+            text-decoration: underline; /* Nếu bạn muốn gạch chân khi hover */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="dichvu.html" class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>NHA KHOA UYÊN VY</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">TRANG CHỦ</a>
+                <a href="dichvu.html" class="nav-item nav-link">DỊCH VỤ</a>
+                <a href="datlich.html" class="nav-item nav-link">ĐẶT LỊCH</a>
+                <a href="lienhe.html" class="nav-item nav-link">LIÊN HỆ</a>
+            </div>
+            <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Dịch Vụ Section Start -->
+    <section id="services" class="container my-5">
+
+        <div class="service">
+            <!-- Service 1: Niềng Răng -->
+            <div class="service-item">
+                <img src="D:\DOAN2\QLDatLich\images\1-13-980x588.png" alt="Niềng răng">
+                <div class="content">
+                    <h5 style="text-align: center;">NIỀNG RĂNG MẮC CÀI SỨ</h5>
+                    <p><b>Cấu tạo:</b></br>
+                    Mắc cài sứ: Mắc cài làm từ chất liệu sứ hoặc composite có màu gần giống với màu răng, giúp giảm thiểu sự chú ý đến khí cụ niềng răng khi giao tiếp. Mắc cài sứ có thể có hình dáng nhỏ gọn, tinh tế và ít gây cảm giác khó chịu hơn.</br>
+                    Dây cung: Dây cung kim loại được gắn vào mắc cài, và chính dây cung này tạo ra lực để di chuyển răng về vị trí mong muốn. Mặc dù dây cung kim loại được sử dụng, mắc cài sứ giúp giữ cho khí cụ niềng ít lộ ra ngoài.</br>
+                    Dây thun: Một số hệ thống niềng răng mắc cài sứ sử dụng dây thun để giữ dây cung vào mắc cài, giúp cố định các răng trong suốt quá trình điều trị.</p>
+                    
+                    <p><b>Quy trình:</b></br>
+                    Khám và lập kế hoạch điều trị: Bác sĩ nha khoa sẽ tiến hành thăm khám và thực hiện các xét nghiệm như X-quang để xác định vấn đề và lập kế hoạch điều trị chi tiết cho bạn.</br>
+                    Gắn mắc cài và dây cung: Sau khi lên kế hoạch, bác sĩ sẽ gắn mắc cài sứ lên các răng của bạn và nối dây cung để tạo ra lực giúp di chuyển răng.</br>
+                    Điều chỉnh định kỳ: Trong suốt quá trình niềng, bạn sẽ cần tái khám để bác sĩ điều chỉnh lại dây cung, thay dây thun và theo dõi quá trình di chuyển của răng.</br>
+                    Chăm sóc và bảo dưỡng: Bạn cần chăm sóc răng miệng cẩn thận để tránh thức ăn bị mắc vào mắc cài, đồng thời hạn chế ăn các thực phẩm cứng hoặc dính để bảo vệ mắc cài.</p></br>
+                    <p class="text-danger font-weight-bold">Giá: 35,000,000 VNĐ</p>
+                
+                    
+                
+                    <a href="datlich.html" class="btn btn-primary">ĐẶT LỊCH</a>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+    <!-- Dịch Vụ Section End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/twentytwenty/jquery.event.move.js"></script>
+    <script src="lib/twentytwenty/jquery.twentytwenty.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

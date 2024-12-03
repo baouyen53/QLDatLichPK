@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NHA KHOA UYÊN VY</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="lib/twentytwenty/twentytwenty.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="dichvu.html" class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>NHA KHOA UYÊN VY</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link active">TRANG CHỦ</a>
+                <a href="dichvu.html" class="nav-item nav-link">DỊCH VỤ</a>
+                <a href="datlich.html" class="nav-item nav-link">ĐẶT LỊCH</a>
+                <a href="hotro.html" class="nav-item nav-link">HỖ TRỢ</a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchQuery" class="search-input" placeholder="Tìm kiếm...">
+                <button onclick="searchContent()" class="search-button">Tìm kiếm</button>
+            </div>
+
+            <!-- Khu vực hiển thị kết quả tìm kiếm -->
+            <div id="searchResults"></div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Dịch Vụ Section Start -->
+    <section id="services" class="container my-5">
+        <h2 class="text-center mb-4">DỊCH VỤ CỦA CHÚNG TÔI </br></h2>
+
+        <div class="row">
+            <!-- Service 1 -->
+            <div class="col-md-4 mb-4">
+                <a href="niengrang.html" class="card"><div class="card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.R6xbNH5XrxpT2Fac59Na0AHaEl&pid=Api&P=0&h=220" alt="Niềng răng">
+                    <div class="card-body">
+                        <h5 class="card-title">NIỀNG RĂNG</h5>
+                        <p class="card-text">Phương pháp chỉnh nha giúp điều chỉnh sự sai lệch của răng và hàm, nhằm cải thiện sự thẩm mỹ và chức năng của bộ răng miệng. Quá trình niềng răng sử dụng các khí cụ như mắc cài, dây cung và các phụ kiện khác để dần dần di chuyển răng về vị trí mong muốn.</p>
+                        <p class="card-text text-danger font-weight-bold">Giá: 20,000,000 VNĐ - 50,000,000 VNĐ</p>
+                    </div>
+                </div>
+            </a>
+                
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4 mb-4">
+                <a href="cayghepimplant.html" class="card"><div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP._ABKHZIEd-6EfndzwiclNAHaEc&pid=Api&P=0&h=220" alt="Cấy ghép Implant">
+                    <div class="card-body">
+                        <h5 class="card-title">CẤY GHÉP IMPLANT</h5>
+                        <p class="card-text">Phương pháp điều trị nha khoa tiên tiến, dùng để thay thế các răng bị mất bằng cách cấy một trụ titan vào xương hàm, sau đó gắn răng giả (răng sứ) lên trên. Phương pháp này giúp phục hồi chức năng ăn nhai và cải thiện thẩm mỹ cho người bị mất răng.</p>
+                        <p class="card-text text-danger font-weight-bold">Giá: 50,000,000 VNĐ</p>
+                    </div>
+                </div>
+            </a>
+                
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4 mb-4">
+                <a href="bocrangsu.html" class="card"><div class="card">
+                    <img src="https://nhakhoathuyanh.com/wp-content/uploads/2019/11/boc-rang-su.jpg" alt="Bọc răng sứ">
+                    <div class="card-body">
+                        <h5 class="card-title">BỌC RĂNG SỨ</h5>
+                        <p class="card-text">Phương pháp phục hình nha khoa nhằm cải thiện thẩm mỹ, chức năng và sức khỏe của răng bằng cách phủ một lớp vỏ sứ lên bề mặt răng thật. Phương pháp này thường được áp dụng khi răng bị hư hại, mòn, nhiễm màu hoặc có hình dạng không đều đặn.</p>
+                        <p class="card-text text-danger font-weight-bold">Giá: 3,000,000 VNĐ/ 1 răng</p>
+                    </div>
+                </div>
+            </a>
+                
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <a href="nhorangkhon.html" class="card">
+                    <div class="card">
+                        <img src="https://suckhoedoisong.qltns.mediacdn.vn/324455921873985536/2023/2/6/photo-1675677300590-1675677301518638502125.jpg" alt="Nhổ răng khôn">
+                        <div class="card-body">
+                            <h5 class="card-title">NHỔ RĂNG KHÔN</h5>
+                            <p class="card-text">Một thủ thuật nha khoa để loại bỏ các răng khôn (răng số 3) khi chúng gây ra các vấn đề về sức khỏe răng miệng. Răng khôn thường mọc ở phía trong cùng của hàm, thường vào độ tuổi từ 17 đến 25, và có thể gặp phải các vấn đề như mọc lệch, thiếu không gian, hay gây viêm nhiễm.</p>
+                            <p class="card-text text-danger font-weight-bold">Giá: 500,000 VNĐ/ 1 răng</p>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <a href="taytrangrang.html" class="card"><div class="card">
+                    <img src="https://taimuihongsg.com/wp-content/uploads/2013/06/tay-trang-rang_taimuihongsg.jpg" alt="Tẩy trắng răng">
+                    <div class="card-body">
+                        <h5 class="card-title">TẨY TRẮNG RĂNG</h5>
+                        <p class="card-text">Phương pháp nha khoa giúp làm sáng màu răng, loại bỏ các vết ố vàng, xỉn màu do thức ăn, đồ uống, thuốc lá, hoặc các yếu tố tự nhiên như tuổi tác. Tẩy trắng răng có thể giúp mang lại nụ cười sáng bóng và tự tin hơn.</p>
+                        <p class="card-text text-danger font-weight-bold">Giá: 7,000,000 VNĐ</p>
+                    </div>
+                </div>
+            </a>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Dịch Vụ Section End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="lib/twentytwenty/jquery.event.move.js"></script>
+    <script src="lib/twentytwenty/jquery.twentytwenty.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- JavaScript cho tìm kiếm -->
+    <script>
+        function searchContent() {
+    var query = document.getElementById("searchQuery").value.toLowerCase();
+    var resultsContainer = document.getElementById("searchResults");
+    resultsContainer.innerHTML = ''; // Xóa kết quả cũ
+
+    if (query.trim() === '') {
+        resultsContainer.innerHTML = '<p>Vui lòng nhập từ khóa tìm kiếm.</p>';
+        return;
+    }
+
+    // Mẫu dữ liệu giả lập (bạn có thể thay đổi bằng cách truy vấn từ backend hoặc API)
+    var content = [
+        { title: 'Niềng Răng', url: 'niengrang.html' },
+        { title: 'Cấy Ghép Implant', url: 'cayghepimplant.html' },
+        { title: 'Bọc Răng Sứ', url: 'bocrangsu.html' },
+        { title: 'Nhổ Răng Khôn', url: 'nhorangkhon.html' },
+        { title: 'Tẩy Trắng Răng', url: 'taytrangrang.html' }
+    ];
+
+    // Lọc kết quả dựa trên từ khóa tìm kiếm
+    var results = content.filter(function(item) {
+        return item.title.toLowerCase().includes(query);
+    });
+
+    // Hiển thị kết quả
+    if (results.length > 0) {
+        results.forEach(function(result) {
+            var resultItem = document.createElement('div');
+            resultItem.classList.add('result-item');
+            // Cập nhật phần hiển thị để có liên kết dẫn đến trang
+            resultItem.innerHTML = `<h5><a href="${result.url}">${result.title}</a></h5>`;
+            resultsContainer.appendChild(resultItem);
+        });
+    } else {
+        resultsContainer.innerHTML = '<p>Không tìm thấy kết quả phù hợp.</p>';
+    }
+}
+
+    </script>
+</body>
+
+</html>

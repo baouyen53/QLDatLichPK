@@ -1,0 +1,80 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+    <a href="index.html" class="navbar-brand p-0">
+        <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>NHA KHOA UYÊN VY</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">TRANG CHỦ</a>
+            <a href="dichvu.html" class="nav-item nav-link">DỊCH VỤ</a>
+            <a href="datlich.html" class="nav-item nav-link">ĐẶT LỊCH</a>
+            <a href="hotro.html" class="nav-item nav-link">HỖ TRỢ</a>
+        </div>
+        <!-- Tìm kiếm -->
+        <button type="button" class="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Tìm kiếm Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Tìm Kiếm</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="searchQuery" class="form-control" placeholder="Nhập từ khóa tìm kiếm...">
+                <button type="button" class="btn btn-primary mt-3" onclick="searchContent()">Tìm Kiếm</button>
+                <div id="searchResults" class="mt-4"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Đặt mã JavaScript trong thẻ <script> -->
+    <script>
+        function searchContent() {
+            var query = document.getElementById("searchQuery").value.toLowerCase();
+            var resultsContainer = document.getElementById("searchResults");
+            resultsContainer.innerHTML = ''; // Xóa kết quả cũ
+        
+            if (query.trim() === '') {
+                resultsContainer.innerHTML = '<p>Vui lòng nhập từ khóa tìm kiếm.</p>';
+                return;
+            }
+        
+            // Mẫu dữ liệu giả lập (bạn có thể thay đổi bằng cách truy vấn từ backend hoặc API)
+            var content = [
+                { title: 'Niềng Răng', description: 'Dịch vụ niềng răng tại Nha Khoa Uyên Vy giúp cải thiện hàm răng của bạn.' },
+                { title: 'Cấy Ghép Implant', description: 'Chúng tôi cung cấp dịch vụ cấy ghép implant để thay thế răng bị mất.' },
+                { title: 'Bọc Răng Sứ', description: 'Dịch vụ bọc răng sứ chất lượng cao giúp bạn tự tin với nụ cười sáng.' },
+                { title: 'Nhổ Răng Khôn', description: 'Chúng tôi cung cấp dịch vụ nhổ răng khôn an toàn và hiệu quả.' },
+                { title: 'Tẩy Trắng Răng', description: 'Tẩy trắng răng giúp mang lại nụ cười trắng sáng cho bạn.' }
+            ];
+        
+            // Lọc kết quả dựa trên từ khóa tìm kiếm
+            var results = content.filter(function(item) {
+                return item.title.toLowerCase().includes(query) || item.description.toLowerCase().includes(query);
+            });
+        
+            // Hiển thị kết quả
+            if (results.length > 0) {
+                results.forEach(function(result) {
+                    var resultItem = document.createElement('div');
+                    resultItem.classList.add('result-item');
+                    resultItem.innerHTML = `<h5>${result.title}</h5><p>${result.description}</p>`;
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>Không tìm thấy kết quả phù hợp.</p>';
+            }
+        }
+        </script>
+        </body>
+        

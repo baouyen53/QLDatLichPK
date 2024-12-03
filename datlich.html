@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <title>Đặt Lịch Khám Răng - NHA KHOA UYÊN VY</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="NHA KHOA UYÊN VY" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+
+        .form-container .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"><i class="fa fa-tooth me-2"></i>NHA KHOA UYÊN VY</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="index.html" class="nav-item nav-link">TRANG CHỦ</a>
+                <a href="dichvu.html" class="nav-item nav-link">DỊCH VỤ</a>
+                <a href="datlich.html" class="nav-item nav-link active">ĐẶT LỊCH</a>
+                <a href="hotro.html" class="nav-item nav-link active">HỖ TRỢ</a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchQuery" class="search-input" placeholder="Tìm kiếm...">
+                <button onclick="searchContent()" class="search-button">Tìm kiếm</button>
+            </div>
+
+            <!-- Khu vực hiển thị kết quả tìm kiếm -->
+            <div id="searchResults"></div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Đặt Lịch Khám Răng Section Start -->
+    <section id="datlich" class="container my-5">
+        <div class="form-container">
+            <h2>ĐẶT LỊCH KHÁM RĂNG</h2>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="fullname">Họ và Tên:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Địa chỉ:</label>
+                    <input type="text" id="text" name="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Ngày khám:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Giờ khám:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Chọn dịch vụ:</label>
+                    <select id="service" name="service" required>
+                        <option value="Nieng rang">Niềng răng</option>
+                        <option value="Cay ghep implant">Cấy ghép Implant</option>
+                        <option value="Boc rang su">Bọc răng sứ</option>
+                        <option value="Nho rang khon">Nhổ răng khôn</option>
+                        <option value="Tay trang rang">Tẩy trắng răng</option>
+                        <option value="Khac">Khác</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Ghi chú (nếu có):</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Đặt Lịch</button>
+            </form>
+        </div>
+    </section>
+    <!-- Đặt Lịch Khám Răng Section End -->
+
+    <!-- Modal Xác Nhận Đặt Lịch Thành Công -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Đặt Lịch Thành Công</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Cảm ơn bạn đã đặt lịch khám tại Nha Khoa Uyên Vy. Chúng tôi sẽ liên hệ với bạn để xác nhận lại lịch hẹn trong thời gian sớm nhất.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <a href="index.html" class="btn btn-primary">Trở về trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Kích Hoạt Modal Sau Khi Gửi Form -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Ngừng hành động gửi form (nếu không dùng AJAX)
+
+            // Hiển thị Modal xác nhận
+            var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+            confirmationModal.show();
+        });
+    </script>
+
+</body>
+
+</html>
